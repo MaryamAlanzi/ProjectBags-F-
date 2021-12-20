@@ -1,0 +1,47 @@
+
+.container {
+  margin: 20px;
+  background-color: #d9bdaf1c;
+  border-radius: 5px;
+  box-shadow: 2px 1px 5px 0px rgba(235, 219, 8, 0.73);
+  width: 200px;
+  height: 100%;
+}
+
+
+
+
+
+.control {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.control label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.control input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #f0f0f0;
+}
+
+.form button {
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  width: 100%;
+  background: #ecac87;
+  padding: 10px 20px 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.form button:hover {
+  background: hsl(20, 35%, 66%);
+  text-decoration: none;
+}

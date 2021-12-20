@@ -1,34 +1,38 @@
 import React from 'react'
-// import { NavLink,Link } from 'react-router-dom'
+
 import { Link  } from "react-router-dom";
 import "./Navbar.css"
 
 
-export default function Nav({ token, setToken }) {
+export default function Navbar({ token, setToken }) {
 
     return (
   
-      <div  class="topnav">
+      <div  className="to">
       {token ? (
         <ul>
       
-          <li>
-    <Link to="/login" onClick={() => {setToken("")      
-     localStorage.setItem("token",JSON.stringify(""))
- }}>تسجيل خروج</Link>
- 
-              <Link   to="/bag">متجرنا </Link>
-              
-          </li>
+          
+    <Link to="/login" onClick={() => {setToken("") }}>     
+   تسجيل خروج</Link>
+
+
+              <Link   to="/Bags">المتجر الالكتروني للشنط </Link>
+              <Link to="/Home" onClick={() =>{setToken()}} >الرئيسية </Link>
+          
         </ul>
       ) : (
         <ul>
-          <li>
-            <Link className="link" to="/login"  onClick={() =>{setToken()}}> تسجيل دخول </Link>
-
-          </li>
+          
+            <Link to="/login" className="link"   onClick={() =>{setToken()}}> تسجيل دخول </Link>
+<li  >أخبارنا </li>
+ <li>العثور على المتجر</li>
+<li>قائمة تمنياتي</li>
+      
         
         </ul>
+        
+
         
         
       )}

@@ -1,0 +1,44 @@
+
+
+
+.form {
+  padding: 40px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.control {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.control label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.control input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #f0f0f0;
+}
+
+.form button {
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  width: 100%;
+  background: #8c8784;
+  padding: 10px 20px 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.form button:hover {
+  background: #c69d89;
+  text-decoration: none;
+}
