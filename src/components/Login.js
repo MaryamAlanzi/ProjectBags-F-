@@ -8,7 +8,6 @@ export default function Login({ setToken }) {
   const [email, setemail] = useState("");
   const [sara, setPassword] = useState("");
   const history = useHistory();
-
   const changeEmail = (e) => {
     setemail(e.target.value);
   };
@@ -22,12 +21,17 @@ export default function Login({ setToken }) {
       event.preventDefault();
       const response = await axios.post("http://localhost:5000/Login", {
         e: email,
-        p: sara,
+        pp: sara,
       });
-      console.log(response.data.token);
-      setToken(response.data.token);
-      history.push("/Bags");
-    } catch (error) {
+      if (response.data.token){
+        console.log(response.data.token);
+        setToken(response.data.token);
+        history.push("/Bags");
+      }
+    }
+    
+    
+    catch (error) {
       console.log(error);
     }
   };
