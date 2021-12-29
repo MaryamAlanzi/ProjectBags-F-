@@ -4,10 +4,11 @@ import axios from "axios";
 // تربط بين الباك والفورنت
 import "./Login.css";
 
-export default function Login({ setToken }) {
+export default function Login({ setToken,setAdmin }) {
   const [email, setemail] = useState("");
   const [sara, setPassword] = useState("");
   const history = useHistory();
+  
   const changeEmail = (e) => {
     setemail(e.target.value);
   };
@@ -26,8 +27,22 @@ export default function Login({ setToken }) {
       if (response.data.token){
         console.log(response.data.token);
         setToken(response.data.token);
+        console.log(response.data.Admin,"jgjgjgj");
+        setAdmin(response.data.Admin);
+        history.push("/UserBag");
+      }
+      if (response.data.Admin){
+        console.log(response.data.Admin);
+        setAdmin(response.data.Admin);
         history.push("/Bags");
       }
+
+
+
+
+
+
+      
     }
     
     

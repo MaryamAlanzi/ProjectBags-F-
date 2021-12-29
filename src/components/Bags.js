@@ -23,11 +23,8 @@ export default function Bags({}) {
       {}
     );
     console.log(deletedBags.data);
-
-    // {_id: '61c50624303cb41b0d9f5ca2', name: 'coach', color: 'brown', description: 'مصنوعه من الجلدالاصلي', img: 'https://cdn.salla.sa/dleaa/LwVJX5el3fOyRm9A2BbliGYtODHPV4n7uQxpp5dx.jpg', …}
-
-
-    if (deletedBags.data === "deleted") {
+// {_id: '61c50624303cb41b0d9f5ca2', name: 'coach', color: 'brown', description: 'مصنوعه من الجلدالاصلي', img: 'https://cdn.salla.sa/dleaa/LwVJX5el3fOyRm9A2BbliGYtODHPV4n7uQxpp5dx.jpg', …}
+   if (deletedBags.data === "deleted") {
       const Bagscopy = [...Bags];
       Bagscopy.splice(index, 1);
       setBags(Bagscopy);
@@ -58,18 +55,20 @@ export default function Bags({}) {
         />
         <button onClick={serch}> بحث</button>
       </div>
+
+
       <div className="Bag"></div>
       <div className="Bags">
         {Bags.map((element, i) => {
           console.log(element);
           return (
             <div className="Bag">
-              <img  onClick={() => { (goToBag(element._id));}} className="imgBags" src={element.img} alt="..." />
+              <img  onClick={() => { (goToBag(element._id));}}  src={element.img} alt="..." />
               <div>
-                <h4>أسم الشنطه : {element.name} </h4>
-                <p>اللون :{element.color} </p>
-                <p> وصفها :{element.description} </p>
-                <p>السعر: {element.price} </p>
+                <h4>اسم الشنطه : {element.name} </h4>
+                <p>لون الشنطه :{element.color} </p>
+                <p>وصف :{element.description} </p>
+                <p>ر.س {element.price} <p>شامل ضريبة القيمة المضاف</p></p>
 
                 <button
                   onClick={() => {
@@ -85,3 +84,4 @@ export default function Bags({}) {
     </>
   );
 }
+
