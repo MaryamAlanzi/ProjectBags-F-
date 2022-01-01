@@ -1,4 +1,15 @@
-.imgBag {
+
+.Bags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  position: relative;
+  }
+
+  .imgBag {
     width: 30%;
     height: 50px;
     margin-top: 25px;
@@ -12,13 +23,4 @@
     margin-top: 30px;
     transition: 1s;
    
-  }
-  .Bags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  position: relative;
   }

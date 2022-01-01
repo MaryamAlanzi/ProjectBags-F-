@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import "./Bags.css";
@@ -6,13 +7,21 @@ import "./Bags.css";
 export default function Bags({}) {
   const [Bags, setBags] = useState([]);
   const [valueInput, setvalueInput] = useState("");
-  const history = useHistory();
-  
+  const [name, setneme] = useState("");
+  const [img, setimg] = useState("");
+  const [descripion, setdescripion] = useState("");
+  const [url, seturl] = useState("");
+const [updet, setupdet] = useState([])
+const { id } = useParams();
+const history = useHistory();
+console.log("iddd", id);
 
 
 
 
- useEffect(async () => {
+
+
+  useEffect(async () => {
     const res = await axios.get("http://localhost:5000/Bags", {});
     setBags(res.data);
   }, []);
@@ -23,17 +32,17 @@ export default function Bags({}) {
       {}
     );
     console.log(deletedBags.data);
-// {_id: '61c50624303cb41b0d9f5ca2', name: 'coach', color: 'brown', description: 'مصنوعه من الجلدالاصلي', img: 'https://cdn.salla.sa/dleaa/LwVJX5el3fOyRm9A2BbliGYtODHPV4n7uQxpp5dx.jpg', …}
-   if (deletedBags.data === "deleted") {
+    // {_id: '61c50624303cb41b0d9f5ca2', name: 'coach', color: 'brown', description: 'مصنوعه من الجلدالاصلي', img: 'https://cdn.salla.sa/dleaa/LwVJX5el3fOyRm9A2BbliGYtODHPV4n7uQxpp5dx.jpg', …}
+    if (deletedBags.data === "deleted") {
       const Bagscopy = [...Bags];
       Bagscopy.splice(index, 1);
       setBags(Bagscopy);
     }
   };
 
-  const goToBag  =(id)=>{
+  const goToBag = (id) => {
     history.push(`/Bag/${id}`);
-  }
+  };
 
   function setvalue(e) {
     setvalueInput(e.target.value);
@@ -45,38 +54,52 @@ export default function Bags({}) {
   }
   return (
     <>
-      <div>
-        <input
+      <div  id="serch">
+        <input id="input"
           onChange={(e) => {
-            setvalue(e);
+            setvalue (e);
           }}
           type="text"
           placeholder="اسم الشنطه"
         />
-        <button onClick={serch}> بحث</button>
+        <button   className="btn"  onClick={serch}> بحث</button>
       </div>
 
-
-      <div className="Bag"></div>
-      <div className="Bags">
+      <div id="card" >
         {Bags.map((element, i) => {
           console.log(element);
           return (
-            <div className="Bag">
-              <img  onClick={() => { (goToBag(element._id));}}  src={element.img} alt="..." />
-              <div>
-                <h4>اسم الشنطه : {element.name} </h4>
-                <p>لون الشنطه :{element.color} </p>
-                <p>وصف :{element.description} </p>
-                <p>ر.س {element.price} <p>شامل ضريبة القيمة المضاف</p></p>
-
-                <button
+            <div>
+              <div id="cc">
+          
+                <div class="">
+                  <div  className="card-body">
+                  <h4  className="card-title">
+                  <img
                   onClick={() => {
-                    deleteBags(element._id, i);
+                    goToBag(element._id);
                   }}
-                > حذف
-                </button>
-              </div>
+                  src={element.img}className="card-img-top"
+                  alt="..."
+                  style={{ width: "100%" }}
+                />
+                    <b>اسم الشنطه : {element.name}</b>
+                  </h4 >
+                  <p className="card-text">لون الشنطه :{element.color}</p>
+                  <p className="card-text">وصف :{element.description} </p>
+                  <p className="card-text">ر.س {element.price} شامل ضريبة القيمة المضاف</p>
+                  <button className="btn btn-primary"
+                    onClick={() => {
+                      deleteBags(element._id, i);
+                    }}
+                  >
+                    {" "}
+                    حذف
+                  </button>
+                </div>
+                
+              </div>{" "}
+            </div>
             </div>
           );
         })}
@@ -84,4 +107,3 @@ export default function Bags({}) {
     </>
   );
 }
-

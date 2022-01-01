@@ -6,10 +6,9 @@ import Login from "./components/Login"
 import Bags from "./components/Bags"
 import Bag from "./components/Bag";
 import Navbar from "./components/Navbar"; 
-import Cart from "./components/Cart";
 import Add from "./components/Add";
 import UserBag from "./components/UserBag";
- 
+ import Updet from "./components/Updet"
  
 export default function App() {
   const [token, setToken] = useState("");
@@ -28,7 +27,8 @@ export default function App() {
   <Route  exact   path="/UserBag" render={() => { return <UserBag token={token} />;}} />
   <Route  exact   path="/Add" render={() => { return <Add token={token} />;}} />
  <Route  exact   path="/Bag/:id" render={() => { return <Bag token={token} />;}} />
- <Route  exact  path="/Cart" render={() => {   return <Cart setToken={setToken} token={token} />; }} />
+ <Route  exact   path="/Updet/:id" render={() => { return <Updet token={token} />;}} />
+
   <Route exact path= "/Login" render={() => ( <Login setToken={setToken} setAdmin={setAdmin}  />  )
    }/>
 </Route>

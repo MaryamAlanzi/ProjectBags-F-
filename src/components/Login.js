@@ -52,11 +52,12 @@ export default function Login({ setToken,setAdmin }) {
   };
 
   return (
-    <div>
+    <div class="container">
       <form className="form">
         <h2>تسجيل الدخول </h2>
 
         <div className="control">
+          
           <label>بريد إلكتروني</label>
           <input
             onChange={(e) => {
@@ -75,8 +76,9 @@ export default function Login({ setToken,setAdmin }) {
             placeholder="Enter passowrd"
           />
         </div>
-
+        <form className="form">
         <button type="submit" onClick={checkLogin}>دخول</button>
+      </form>
       </form>
     </div>
   );
