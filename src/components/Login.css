@@ -1,7 +1,11 @@
 
 .container {
-  position: relative;
-  width: 50%;
+  margin: 20px;
+  background-color: #d9bdaf1c;
+  border-radius: 5px;
+  box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.73);
+  width: 700px;
+  height: 600%;
 }
 
 .form {
@@ -12,17 +16,17 @@ h2 {
   text-align: center;
 }
 
-.control {
+.form-control {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.control label {
+.form-control label {
   display: block;
   margin-bottom: 5px;
 }
 
-.control input {
+.form-control input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;

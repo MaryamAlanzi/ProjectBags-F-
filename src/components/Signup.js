@@ -49,10 +49,10 @@ export default function Signup() {
     }
   };
   return (
-    <div1 className="container">
-      <form className="form">
-        <div className="control">
-          <label>اسم المستخدم </label>
+    <div1 class="container">
+      <form id="form" class="form">
+        <div class="form-control">
+          <label for="username">اسم المستخدم </label>
 
           {/* انبت  لليوزر نيم */}
 
@@ -64,8 +64,8 @@ export default function Signup() {
           />
         </div>
 
-        <div className="control">
-          <label>بريد إلكتروني</label>
+        <div class="form-control">
+          <label for="email">بريد إلكتروني</label>
           {/* انبت للايميل  */}
           <input
             onChange={(e) => {
@@ -75,8 +75,8 @@ export default function Signup() {
           />
         </div>
 
-        <div className="control">
-          <label>كلمة المرور</label>
+        <div class="form-control">
+          <label for="passowrd">كلمة المرور</label>
           {/* انبت للباسورد */}
           <input
             onChange={(e) => {
@@ -87,7 +87,7 @@ export default function Signup() {
         </div>
 
         {/* بتن للسجل بساين اب  */}
-        <form className="form">
+        <form class="form-control">
           <button
             type="submit"
             onClick={() => {

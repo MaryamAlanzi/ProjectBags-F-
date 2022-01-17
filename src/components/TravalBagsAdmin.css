@@ -1,0 +1,58 @@
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 27px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+
+  *{
+    font-family: 'El Messiri', sans-serif;}
+  .Bags{
+    margin: 50px;
+        border-radius: 50px 30px; 
+  
+  }
+  #card{
+    
+    margin: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+        border-radius: 50px 30px; 
+  
+  }
+  .Bags:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+  img{
+    width: 150px;
+    height: 200px;
+    border-radius: 50px 60px; 
+  }
+  
+  
+  #input{
+    margin: 5px;
+    width: 400px;
+    height: 200px;
+  }
+  /* h4{
+    color: #c38c6d;
+  }
+  h5{
+    color: #dbc2be;
+  } */
+
+  
+
+  

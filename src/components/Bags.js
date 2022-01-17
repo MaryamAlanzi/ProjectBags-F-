@@ -60,6 +60,7 @@ console.log("iddd", id);
             setvalue (e);
           }}
           type="text"
+          className="se"
           placeholder="اسم الشنطه"
         />
         <button   className="btn"  onClick={serch}> بحث</button>
@@ -70,7 +71,7 @@ console.log("iddd", id);
           console.log(element);
           return (
             <div>
-              <div id="cc">
+              <div className="bags">
           
                 <div class="">
                   <div  className="card-body">
@@ -87,18 +88,19 @@ console.log("iddd", id);
                   </h4 >
                   <p className="card-text">لون الشنطه :{element.color}</p>
                   <p className="card-text">وصف :{element.description} </p>
-                  <p className="card-text">ر.س {element.price} شامل ضريبة القيمة المضاف</p>
+                  <p className="card-text">ر.س {element.price} </p>
+
+
                   <button className="btn btn-primary"
                     onClick={() => {
                       deleteBags(element._id, i);
                     }}
                   >
-                    {" "}
-                    حذف
+                   حذف
                   </button>
                 </div>
                 
-              </div>{" "}
+              </div>
             </div>
             </div>
           );

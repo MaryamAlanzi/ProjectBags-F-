@@ -1,55 +1,45 @@
-*{
-  font-family: 'El Messiri', sans-serif;
-}
 
+*{
+  font-family: 'El Messiri', sans-serif;}
+.Bags{
+  margin: 50px;
+      border-radius: 50px 30px; 
+
+}
 #card{
-  /* width: 1200px; */
-  margin: 10px;
+  
+  margin: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
-  border-radius: 50px 30px;   
+      border-radius: 50px 30px; 
+
 }
-#cc{
-  margin: 10px;
-  border-radius: 50px 30px;  
-  background-color: rgb(255, 255, 255);
-  border: 2px  solid #6B7AA1 ;
-}
-#cc:hover {
+.Bags:hover {
   -ms-transform: scale(1.2); /* IE 9 */
   -webkit-transform: scale(1.2); /* Safari 3-8 */
   transform: scale(1.1); 
-
 }
 img{
   width: 200px;
   height: 270px;
-  border-radius: 50px 30px; 
-  /* border: 2px solid #6B7AA1 ; */
-
-
+  border-radius: 50px 70px; 
 
 }
 #serch{
 margin-top: 10;
- text-align: center;
+  text-align: center;
 }
 #input{
   margin: 1px;
-  width: 300px;
+  width: 400px;
   height: 40px;
-  border-radius: 7px ; 
-
 }
-h4 ,h1{
-  color: #11324D;
+h4{
+  color: #c38c6d;
 }
-
+h5{
+  color: #dbc2be;
+}
 p{
-  color: #6B7AA1;
-  /* font-size: 20px; */
-  
+  color: #8c8784;
 }
-
-
-

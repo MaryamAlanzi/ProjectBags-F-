@@ -1,12 +1,12 @@
-.imgBag {
-    width: 30%;
-    height: 50px;
+/* .imgBag {
+    width: 80%;
+    height: 100px;
     margin-top: 25px;
     border-radius: 100%; 
   
   }
   .Bag {
-    border: rgb(233, 129, 129) solid;
+    border: rgb(248, 164, 54) solid;
     width: 28%;
     border: 1px solid black;
     margin-top: 30px;
@@ -20,5 +20,76 @@
     border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
+  position: relative; */
+  
+/* 
+ 
+.container {
   position: relative;
-  }
+  text-align: center;
+  color: white;
+}
+/* 
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */ */
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  font-size: 17px;
+}
+
+.div {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container img {vertical-align: middle;}
+
+.container .content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}

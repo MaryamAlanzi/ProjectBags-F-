@@ -5,15 +5,18 @@ import "./Home.css";
 export default function Home() {
   return (
     <div id="Home">
+      <section class="curved">
       <section id="main">
-        <div>
-          <div>
-            <h2 id="h2">
+        <div className="text">
+        
+          <div className="fo" >
+          
+            <h2 className="fod">
               تتميز هذه الشركة العالمية بانها عنوان للنجاح المميز وهي تقدم لك
               الشنط العملية المناسبة لاطلالاتك اليومية وبالوانها المميزة مع
               مجموعة واسعة من التصاميم.
             </h2>
-            <h2  id="h2">أشهر ماركات الشنط شنط بألوان واشكال رائعة</h2>
+            <h2  className="fod">أشهر ماركات الشنط شنط بألوان واشكال رائعة</h2>
             <Link className=".btn" to={"/SignUp"} className="btn">
               للتسجيل
             </Link>
@@ -38,6 +41,7 @@ export default function Home() {
             alt="..."
           />
         </div>
+      </section>
       </section>
     </div>
   );

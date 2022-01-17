@@ -34,9 +34,9 @@ export default function Add({ token }) {
 
       {
         newname: name,
-        newcolor: description,
+        newcolor: color,
         newimg: img,
-        newdescription: color,
+        newdescription: description,
         newprice: price,
       },
       { headers: { authorization: `Bearer ${token}` } }

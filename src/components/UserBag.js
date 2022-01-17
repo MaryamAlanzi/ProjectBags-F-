@@ -64,7 +64,7 @@ export default function UserBag({}) {
                     <p className="card-text">لون الشنطه :{element.color}</p>
                     <p className="card-text">وصف :{element.description} </p>
                     <p className="card-text">
-                      ر.س {element.price} شامل ضريبة القيمة المضاف
+                      ر.س {element.price} 
                     </p>
                  
                  

@@ -8,45 +8,70 @@ export default function Navbar({ token, setToken, Admin, setAdmin }) {
   console.log("adminnn", Admin);
 
   return (
-    <div className="to">
+    <div class="topnav">
       {token ? (
         <ul>
-          <li>
-            <Link
+          
+            <Link 
               to="/login"
               onClick={() => {
-                setToken("");
-                setAdmin("");
+                setToken("")
               }}
             >
               تسجيل خروج{" "}
             </Link>
-          </li>
-          <li>
+          
+        
+       
+          
+          {Admin != "Maryam.com" ?
+            <Link to="/TravalBags"> شنط السفر </Link>
+:""}
+          
+
+         
+
+             
+             {Admin == "Maryam.com" ? (
+               <Link to="/TravalBagsAdmin"> شنط السفر </Link>
+
+             ) : (
+               ""
+             )}
+           
+           
+            {Admin == "Maryam.com" ? <Link to="/adds">أضافه شنط السفر </Link> : ""}
+          
+           
             {Admin == "Maryam.com" ? (
-              <Link to="/Bags">المتجر الالكتروني للشنط </Link>
+              <Link to="/Bags">شنط </Link>
             ) : (
               ""
-            )}{" "}
-          </li>
-          <li>
-            {" "}
-            <Link to="/Home"> الرئيسية </Link>
-          </li>
+            )}
+          
+          
+            {Admin == "Maryam.com" ? <Link to="/Add">أضافه شنط </Link> : ""}
+          
+        
+          
+          {Admin != "Maryam.com" ? 
 
-          <li>
-            {Admin == "Maryam.com" ? <Link to="/Add">أضافه منتج </Link> : ""}{" "}
-          </li>
-          <li>
-            <Link to="/Home">أخبارنا </Link>
-          </li>
-          <li>
-            <Link to="/UserBag"> المتجر </Link>
-          </li>
+            <Link to="/UserBag"> شنط </Link>
+         :"" }
+          
+          
+            
+            <Link to="/Home"> الرئيسية </Link>
+          
+          
+          {Admin != "Maryam.com" ? 
+            <Link to="/Cart"> سله التسوق </Link>:"" }
+            
+         
         </ul>
       ) : (
         <ul>
-          <li>
+          
             {" "}
             <Link
               to="/login"
@@ -57,7 +82,7 @@ export default function Navbar({ token, setToken, Admin, setAdmin }) {
               {" "}
               تسجيل دخول{" "}
             </Link>
-          </li>
+          
         </ul>
       )}
     </div>

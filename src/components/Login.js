@@ -29,6 +29,7 @@ export default function Login({ setToken,setAdmin }) {
         setToken(response.data.token);
         console.log(response.data.Admin,"jgjgjgj");
         setAdmin(response.data.Admin);
+        console.log("hgghhghjhj",response.data.token);
         history.push("/UserBag");
       }
       if (response.data.Admin){
@@ -53,12 +54,12 @@ export default function Login({ setToken,setAdmin }) {
 
   return (
     <div class="container">
-      <form className="form">
+      <form id="form" class="form">
         <h2>تسجيل الدخول </h2>
 
-        <div className="control">
+        <div  class="form-control">
           
-          <label>بريد إلكتروني</label>
+          <label for="email">بريد إلكتروني</label>
           <input
             onChange={(e) => {
               changeEmail(e);
@@ -67,8 +68,8 @@ export default function Login({ setToken,setAdmin }) {
           />
         </div>
 
-        <div className="control">
-          <label>كلمة المرور</label>
+        <div  class="form-control">
+          <label for="passowrd">كلمة المرور</label>
           <input
             onChange={(e) => {
               changePassword(e);
@@ -76,7 +77,7 @@ export default function Login({ setToken,setAdmin }) {
             placeholder="Enter passowrd"
           />
         </div>
-        <form className="form">
+        <form  class="form-control">
         <button type="submit" onClick={checkLogin}>دخول</button>
       </form>
       </form>

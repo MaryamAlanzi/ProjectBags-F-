@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import axios from "axios";
 
-export default function AddBook({ token }) {
+export default function Updet({ token, Admin }) {
   const [newname, setneme] = useState("");
   const [newprice, setprice] = useState("");
-  const [Updet, setupdet] = useState([]);
+  const [updet, setupdet] = useState([]);
   const { id } = useParams();
   console.log("iddddd", id);
+  console.log("Admin", Admin);
 
-  const updetname = (e) => {
+  const Updetname = (e) => {
     setneme(e.target.value);
   };
-  const updeprice = (e) => {
+  const Updetprice = (e) => {
     setprice(e.target.value);
   };
 
-  const UpdeteBags = async (id) => {
+  const UpdeteBags = async (id,e) => {
+    e.preventDefault();
     try {
       console.log(id, "id");
       const Updet = await axios.put(
@@ -38,37 +40,53 @@ export default function AddBook({ token }) {
   };
 
   return (
-    <div>
+    <div class="container">
+      <form className="form">
+        <div className="control">
       <br />
       <br />
       <br />
-      <input
-        onChange={(e) => {
-          updetname(e);
-        }}
-        type="text"
-        placeholder="   الاسم  "
-      ></input>
+      {Admin == "Maryam.com" ? (
+        <input
+          onChange={(e) => {
+            Updetname(e);
+          }}
+          type="text"
+          placeholder="   الاسم  "
+        ></input>
+      ) : (
+        ""
+      )}
 
       <br />
       <br />
       <br />
-      <input
-        onChange={(e) => {
-          updeprice(e);
-        }}
-        type="text"
-        placeholder=" السعر "
-      ></input>
+      {Admin == "Maryam.com" ? (
+        <input
+          onChange={(e) => {
+            Updetprice(e);
+          }}
+          type="text"
+          placeholder=" السعر "
+        ></input>
+      ) : (
+        ""
+      )}
+      <br />
       <br />
 
       <button
-        onClick={() => {
-          UpdeteBags(id);
+        onClick={(e) => {
+          UpdeteBags(id,e);
         }}
       >
         تعديل الشنط{" "}
       </button>
+      </div>
+      </form>
+      
     </div>
+    
+    
   );
 }
