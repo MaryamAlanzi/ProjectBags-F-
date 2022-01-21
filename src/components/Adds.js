@@ -33,7 +33,7 @@ export default function Adds({ token }) {
     e.preventDefault();
     
     const result = await axios.post(
-      "http://localhost:5000/addTBags",
+      `${process.env.REACT_APP_BACKEND_URL}/addTBags`,
       {
         newname: Name,
         newcolor: color,

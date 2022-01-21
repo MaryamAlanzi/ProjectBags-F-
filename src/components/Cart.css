@@ -1,9 +1,11 @@
-.payBtn{width: 70px;
-    background-color: chartreuse;
+.payBtn{width: 150px;
+    background-color: rgb(139, 138, 139);
 margin-right: 70%;
 
-
-
-
-
 }
+
+
+.p1{
+    margin-right: 80%;
+}
+

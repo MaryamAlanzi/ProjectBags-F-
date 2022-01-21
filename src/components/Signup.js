@@ -36,20 +36,20 @@ export default function Signup() {
     });
     //{name: 'hanan', email: 'hanan@hotmail.com', password: '1111'}
     // عرفت متغير جديد يجيب البيانات من الباك عن طريق الاكسيس
-    const response = await axios.post("http://localhost:5000/Signup", {
+    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Signup`, {
       name: name,
       email: email,
       x: huda,
     });
 
-    // شرط اف  نفس الرقم
+    // شرط اف  نفس الرقمةى
     if (response.status === 201) {
       history.push("/login");
       // استخدمت الهوستري .بش عشان توديني لصفحه اللوقن
     }
   };
   return (
-    <div1 class="container">
+    <div class="container">
       <form id="form" class="form">
         <div class="form-control">
           <label for="username">اسم المستخدم </label>
@@ -98,6 +98,6 @@ export default function Signup() {
           </button>
         </form>
       </form>
-    </div1>
+    </div>
   );
 }

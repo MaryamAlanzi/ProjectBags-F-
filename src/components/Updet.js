@@ -23,7 +23,7 @@ export default function Updet({ token, Admin }) {
     try {
       console.log(id, "id");
       const Updet = await axios.put(
-        `http://localhost:5000/Bags/${id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/Bags/${id}`,
         {
           newname,
           newprice,
@@ -75,7 +75,7 @@ export default function Updet({ token, Admin }) {
       <br />
       <br />
 
-      <button
+      <button 
         onClick={(e) => {
           UpdeteBags(id,e);
         }}

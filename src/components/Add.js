@@ -30,7 +30,7 @@ export default function Add({ token }) {
   const addBags = async (e) => {
     e.preventDefault();
     const result = await axios.post(
-      "http://localhost:5000/Bags",
+      `${process.env.REACT_APP_BACKEND_URL}/Bags`,
 
       {
         newname: name,

@@ -15,7 +15,7 @@ export default function TravalBag({ Admin, token }) {
   useEffect(async () => {
     console.log("oooo");
 
-    const res = await axios.get(`http://localhost:5000/TravalBag/${id}`, {});
+    const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/TravalBag/${id}`, {});
     setbag(res.data);
     console.log(res.data, "oooo");
   }, []);
@@ -23,7 +23,7 @@ export default function TravalBag({ Admin, token }) {
   const addCart = async () => {
     try {
       const result = await axios.post(
-        `http://localhost:5000/addToTraval/${id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/addToTraval/${id}`,
         {},
         {
           headers: { authorization: "Bearer " + token },
@@ -43,7 +43,7 @@ const AddBagCommint = async () => {
   console.log("commmmmint");
   try {
     const result = await axios.post(
-      `http://localhost:5000/addTBagcommint/${id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/addTBagcommint/${id}`,
       {
         Commint: Commint,
       },
@@ -63,7 +63,7 @@ const changeCommint = (e) => {
 
 const deleteTBagCommint =async (Commint)=>{
   try {
-      const result = await axios.put(`http://localhost:5000/delTBagcommint/${id}`,
+      const result = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/delTBagcommint/${id}`,
 
       {Commint:Commint},
       {headers: { authorization: "Bearer " + token }})
@@ -81,11 +81,10 @@ const deleteTBagCommint =async (Commint)=>{
 
 
   return (
-    <div className=" container">
-      <div className=" container" className=".content">
+    <div className="di">
       
-      <img className="
-container img" src={bag.img} alt="..." />
+      
+      <img className="amge" src={bag.img} alt="..." />
       <h1 className="card-text">{bag.name}</h1>
       <h1 className="card-text"> وصف :{bag.description}</h1>
       <h1 className="card-text">لون الشنطه {bag.color} </h1>
@@ -93,13 +92,13 @@ container img" src={bag.img} alt="..." />
         <p className="card-text">ر.س. {bag.price} </p>{" "}
       </h1>
 
-      <input
+      <input id="input"
             onChange={(e) => {
               changeCommint(e);
             }}
             type="text"
           />
-          <button
+          <button className="btn"
             onClick={() => {
               AddBagCommint();
             }}
@@ -111,7 +110,7 @@ container img" src={bag.img} alt="..." />
  <div key={i}>
                     <p> {elm.userName}</p>
                     <p>{elm.Commint}</p>
-                     <button onClick={()=>{deleteTBagCommint(elm.comment)}}>delet </button> 
+                     <button className="btn" onClick={()=>{deleteTBagCommint(elm.comment)}}>delet </button> 
 
                    </div>
                );
@@ -122,8 +121,7 @@ container img" src={bag.img} alt="..." />
 
 
       {Admin != "Maryam.com" ? (
-        <button
-          style={{ width: "100%" }}
+        <button  className="btn"
           onClick={() => {
             addCart();
           }}
@@ -137,6 +135,6 @@ container img" src={bag.img} alt="..." />
         ""
       )}
     </div>
-    </div>
+    
   );
 }

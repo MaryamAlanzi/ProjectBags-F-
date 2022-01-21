@@ -17,7 +17,7 @@ export default function Home() {
               مجموعة واسعة من التصاميم.
             </h2>
             <h2  className="fod">أشهر ماركات الشنط شنط بألوان واشكال رائعة</h2>
-            <Link className=".btn" to={"/SignUp"} className="btn">
+            <Link to={"/SignUp"} className="btn">
               للتسجيل
             </Link>
           </div>

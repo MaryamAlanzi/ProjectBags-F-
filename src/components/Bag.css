@@ -1,65 +1,4 @@
-/* .imgBag {
-    width: 80%;
-    height: 100px;
-    margin-top: 25px;
-    border-radius: 100%; 
-  
-  }
-  .Bag {
-    border: rgb(248, 164, 54) solid;
-    width: 28%;
-    border: 1px solid black;
-    margin-top: 30px;
-    transition: 1s;
-   
-  }
-  .Bags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  position: relative; */
-  
-/* 
- 
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-/* 
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-}
 
-.top-left {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-}
-
-.top-right {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-}
-
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-}
-
-/* .centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */ */
 
 
 
@@ -77,8 +16,8 @@ body {
 
 .div {
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 60%;
+  margin: 50% auto;
   text-align: center;
 }
 
@@ -92,4 +31,29 @@ body {
   color: #f1f1f1;
   width: 100%;
   padding: 20px;
+}
+p{
+  text-align: center;
+}
+h4{
+  text-align: center;
+}
+button{
+  text-align: center;
+}
+h1{
+  text-align: center;
+}
+.amge{
+  margin-left: 40%;
+  height: auto;
+  width: 20%;
+}
+/* .di{
+  border: black
+  solid;
+
+} */
+#put{
+  margin-left: 40%;
 }

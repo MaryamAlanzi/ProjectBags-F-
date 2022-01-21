@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState ,useEffect} from "react"; 
  import {Route } from 'react-router-dom';
 import Home from "./components/Home";
 import Signup from "./components/Signup";
@@ -15,11 +15,35 @@ import Adds from "./components/Adds";
 import Cart from "./components/Cart"
 import TravalBag from "./components/TravalBag";
 export default function App() {
+  console.log(process.env.REACT_APP_BACKEND_URL);
+
   const [token, setToken] = useState("");
   const [Admin , setAdmin]=useState("")
+  
 
-   
+
+useEffect(async() => { 
+  if (!token) {
+    const token = JSON.parse(localStorage.getItem("token"))
+    setToken(token)
+  }
+  // تستخدم لإجراء تحويل على الكائن الناتج قبل إعادته ,JSON.parse 
+//localStorage.getItem تستخدم لتخزين قيمة على البراوزر 
+
+
+if (!Admin) {
+    const Admin = JSON.parse(localStorage.getItem("Admin"))
+    setAdmin(Admin) 
+}
+}, [token])
+
+
+
+
+
+ 
    return (
+
     <div className="App">
       <Navbar token={token}  Admin={Admin} setToken={setToken}  />
     <Route>
@@ -44,4 +68,5 @@ export default function App() {
 </Route>
     </div>
   );
+
 }

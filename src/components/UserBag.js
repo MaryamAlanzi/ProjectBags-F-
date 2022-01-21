@@ -9,7 +9,7 @@ export default function UserBag({}) {
   const history = useHistory();
 
   useEffect(async () => {
-    const res = await axios.get("http://localhost:5000/Bags", {});
+    const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Bags`, {});
     setBags(res.data);
   }, []);
 

@@ -13,7 +13,7 @@ export default function Cart({ token }) {
   useEffect(async () => {
     try {
       if (token) {
-        const reult = await axios.get("http://localhost:5000/getcart", {
+        const reult = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getcart`, {
           headers: { authorization: "Bearer " + token },
         });
         setBags(reult.data);
@@ -27,7 +27,7 @@ export default function Cart({ token }) {
   useEffect(async () => {
     try {
       if (token) {
-        const reult = await axios.get("http://localhost:5000/getcartt", {
+        const reult = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getcartt`, {
           headers: { authorization: "Bearer " + token },
         });
         setTravalBags(reult.data);
@@ -39,7 +39,7 @@ export default function Cart({ token }) {
   }, []);
 
   const removcart = async (id, i) => {
-    const res = await axios.delete(`http://localhost:5000/removcart/${id}`, {
+    const res = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/removcart/${id}`, {
       headers: { authorization: "Bearer " + token },
     });
     const copy = [...Bags];
@@ -47,12 +47,15 @@ export default function Cart({ token }) {
     setBags(copy);
   };
 
-  const deleteCart = async (id,i) => {
-    const res = await axios.delete(`http://localhost:5000/deleteToTraval/${id}`, {
-      headers: { authorization: "Bearer " + token },
-    });
-    const copy = [...TravalBags]
-    copy.splice(i,1)
+  const deleteCart = async (id, i) => {
+    const res = await axios.delete(
+      `${process.env.REACT_APP_BACKEND_URL}/deleteToTraval/${id}`,
+      {
+        headers: { authorization: "Bearer " + token },
+      }
+    );
+    const copy = [...TravalBags];
+    copy.splice(i, 1);
     setTravalBags(copy);
   };
 
@@ -62,14 +65,15 @@ export default function Cart({ token }) {
 
   return (
     <>
-      <button
-        className="toogel"
+      <button 
+        className="btn"
         onClick={() => {
           changeTpgle();
         }}
       >
         <GiReturnArrow />
       </button>
+      
       <div className="cards">
         {toggel === true
           ? Bags.map((element, i) => {
@@ -78,10 +82,15 @@ export default function Cart({ token }) {
                 <div>
                   <img src={element.img} alt="..." />
                   {console.log(element.img)}
-                  <b>اسم الشنطه : {element.name}</b>
-                  <p>س.ر{element.price} </p>
-
-                  <button
+                  <p className="p1">اسم الشنطه : {element.name}</p>
+                  <p className="p1">ر.س{element.price} </p>
+                  <br/>
+                  <br/>
+                  
+                  
+                  
+                  
+                  <button className="btn"
                     onClick={() => {
                       removcart(element._id, i);
                     }}
@@ -89,21 +98,35 @@ export default function Cart({ token }) {
                     {" "}
                     <AiTwotoneDelete />
                   </button>
+                  <br/>
+                  <br/>
+                  <br/>
+                
+                  
 
-       
+                  
+
+
+
+
                 </div>
+                
               );
             })
-          : (TravalBags.map((element, i) => {
+          : TravalBags.map((element, i) => {
               console.log(element, "hhhhhiiii");
               return (
                 <div>
                   <img src={element.img} alt="..." />
                   {console.log(element.img)}
-                  <b>اسم الشنطه : {element.name}</b>
-                  <p>س.ر{element.price} </p>
+                  
+                  <p className="p1">اسم الشنطه : {element.name}</p>
+                  <br/>
+                  <p className="p1">س.ر{element.price} </p>
+                  <br/>
+                
 
-                  <button
+                  <button className="btn"
                     onClick={() => {
                       deleteCart(element._id, i);
                     }}
@@ -111,12 +134,35 @@ export default function Cart({ token }) {
                     {" "}
                     <AiTwotoneDelete />
                   </button>
+                  <br/>
+                  <br/>
+                  <br/>
+                  
+  
+                  
+                 
+      
+
+                 
+
+
+
+
+
+
 
                 </div>
               );
-            }))}
+            })}
       </div>
+      <button className="btn"
+        onClick={() => {
+          
+        }}
+        type="submit"
+      >
+        ادفع
+      </button>
     </>
   );
 }
-

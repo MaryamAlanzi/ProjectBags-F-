@@ -15,7 +15,7 @@ export default function Bag({ token,Admin }) {
 console.log(Admin);
 
   useEffect(async () => {
-    const res = await axios.get(`http://localhost:5000/Bag/${id}`, {
+    const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Bag/${id}`, {
       headers: { authorization: `Bearer ${token}` },
     });
     console.log("id", id);
@@ -26,7 +26,7 @@ console.log(Admin);
 
   const addcart = async () => {
     
-    try { const result = await axios.post( `http://localhost:5000/addcart/${id}`,
+    try { const result = await axios.post( `${process.env.REACT_APP_BACKEND_URL}/addcart/${id}`,
  {},
         {
           headers: { authorization: "Bearer " + token },
@@ -44,7 +44,7 @@ console.log(Admin);
     console.log("commmmmint");
     try {
       const result = await axios.post(
-        `http://localhost:5000/BagCommint/${id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/BagCommint/${id}`,
         {
           Commint: Commint,
         },
@@ -68,7 +68,7 @@ console.log(Admin);
 
   const deleteBagCommint =async (Commint)=>{
     try {
-        const result = await axios.put(`http://localhost:5000/BaggCommint/${id}`,
+        const result = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/${id}`,
 
         {Commint:Commint},
         {headers: { authorization: "Bearer " + token }})
@@ -84,29 +84,30 @@ console.log(Admin);
 
   return (
     <div className="di">
-      <img className=".container img" src={bag.img} alt="..." />
-      <h1 className="card-text">{bag.name}</h1>
-      <h1 className="card-text"> وصف :{bag.description}</h1>
-      <h1 className="card-text ">لون الشنطه {bag.color} </h1>
+      <img className="amge" src={bag.img} alt="..." />
+      <h1 >{bag.name}</h1>
+      <h1 > وصف :{bag.description}</h1>
+      <h1>لون الشنطه {bag.color} </h1>
 
-      {Admin == "Maryam.com" ?
-      <button className="btn"  onClick={() => {history.push(`/Updet/${id}`); }}> تعديل </button>:""}
-
+      
       <h1>
       
         {" "}
        <p className="card-text">ر.س.  {bag.price}  </p> 
       </h1>
+
+      {Admin == "Maryam.com" ?
+      <button className="btn" id="put" onClick={() => {history.push(`/Updet/${id}`); }}> تعديل </button>:""}
+
      
-      <input
+      <input id="input"
             onChange={(e) => {
               changeCommint(e);
             }}
             type="text"
             
           />
-         
-          <button
+          <button className="btn"
             onClick={() => {
               AddBagCommint();
             }}
@@ -118,13 +119,13 @@ console.log(Admin);
  <div key={i}>
                     <p> {elm.userName}</p>
                     <p>{elm.Commint}</p>
-                     <button onClick={()=>{deleteBagCommint(elm.comment)}}>delet </button> 
+                     <button className="btn"   id="put"    onClick={()=>{deleteBagCommint(elm.comment)}}>delet </button> 
 
                    </div>
                );
               })} 
       {Admin != "Maryam.com" ?
-      <button 
+      <button className="btn"
       // style={{ width: "100%" }}
        
         onClick={() => {

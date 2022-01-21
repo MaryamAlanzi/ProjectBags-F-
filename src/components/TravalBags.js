@@ -12,7 +12,7 @@ export default function TravalBags({ token }) {
   useEffect(async () => {
     console.log("oooo");
 
-    const res = await axios.get("http://localhost:5000/TBags", {});
+    const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/TBags`, {});
     setBags(res.data);
     console.log(res.data, "oooo");
   }, []);
@@ -23,14 +23,21 @@ export default function TravalBags({ token }) {
   };
 
   return (
-    <div class=".flex-container ">
+    <div>
        <div class="Bags">
+       
 
-
+      <div  id="div1">
       {Bags.map((element) => {
         console.log(element);
         return (
-          <div class="grid-item">
+          <div className="bags">
+          
+                  <div  className="card-body">
+                  <h4  className="card-title">
+
+
+
             <img
               src={element.img}
               alt="..."
@@ -41,15 +48,24 @@ export default function TravalBags({ token }) {
             />
             <br />
             <br />
-            <b>اسم الشنطه : {element.name}</b>
-            <p>لون الشنطه :{element.color}</p>
-            <p>وصف :{element.description} </p>
-            <p>ر.س {element.price} </p>
+            <b className="card-text">اسم الشنطه : {element.name}</b>
+            </h4>
+            <p className="card-text">لون الشنطه :{element.color}</p>
+            <p className="card-text">وصف :{element.description} </p>
+            <p className="card-text">ر.س {element.price} </p>
           </div>
+          </div>
+          
+          
         );
       })}
+    
+      </div>
     </div>
+  
     </div>
+    
+  
   );
 }
 

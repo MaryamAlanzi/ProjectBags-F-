@@ -1,21 +1,38 @@
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
- 
-}
 
-.flex-container  {
-
-  width: 100px;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-}
-
-
+  
+*{
+  font-family: 'El Messiri', sans-serif;}
 .Bags{
   margin: 50px;
       border-radius: 50px 30px; 
 
+}
+#div1{
+  
+  margin: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+      border-radius: 50px 30px; 
+
+}
+.Bags:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.1); 
+}
+img{
+  width: 200px;
+  height: 270px;
+  border-radius: 50px 70px; 
+
+}
+
+h4{
+  color: #c38c6d;
+}
+h5{
+  color: #dbc2be;
+}
+p{
+  color: #8c8784;
 }

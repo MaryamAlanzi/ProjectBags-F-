@@ -22,13 +22,13 @@ console.log("iddd", id);
 
 
   useEffect(async () => {
-    const res = await axios.get("http://localhost:5000/Bags", {});
+    const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Bags`, {});
     setBags(res.data);
   }, []);
 
   const deleteBags = async (id, index) => {
     const deletedBags = await axios.delete(
-      `http://localhost:5000/Bag/${id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/Bag/${id}`,
       {}
     );
     console.log(deletedBags.data);
@@ -73,7 +73,7 @@ console.log("iddd", id);
             <div>
               <div className="bags">
           
-                <div class="">
+                <div class="di">
                   <div  className="card-body">
                   <h4  className="card-title">
                   <img
@@ -91,7 +91,7 @@ console.log("iddd", id);
                   <p className="card-text">ر.س {element.price} </p>
 
 
-                  <button className="btn btn-primary"
+                  <button className="btn"
                     onClick={() => {
                       deleteBags(element._id, i);
                     }}

@@ -1,9 +1,9 @@
 
 *{
   font-family: 'El Messiri', sans-serif;}
-.Bags{
+.bags{
   margin: 50px;
-      border-radius: 50px 30px; 
+      border-radius: 50px 30px black; 
 
 }
 #card{
@@ -33,6 +33,7 @@ margin-top: 10;
   margin: 1px;
   width: 400px;
   height: 40px;
+  margin-left: 40%;
 }
 h4{
   color: #c38c6d;
@@ -43,3 +44,4 @@ h5{
 p{
   color: #8c8784;
 }
+
